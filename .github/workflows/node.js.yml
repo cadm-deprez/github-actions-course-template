@@ -22,6 +22,8 @@ jobs:
       with:
         name: webpack artifacts
         path: public/
+    env:
+      NODE_OPTIONS: "--openssl-legacy-provider"
   
   test:
     runs-on: ubuntu-latest
