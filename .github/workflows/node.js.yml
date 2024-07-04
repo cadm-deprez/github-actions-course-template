@@ -18,7 +18,7 @@ jobs:
       run: |
         npm install
         npm run build
-    - uses: actions/upload-artifacts@master
+    - uses: actions/upload-artifact@master
       with:
         name: webpack artifacts
         path: public/
@@ -31,13 +31,13 @@ jobs:
     
     strategy:
       matrix:
-        #node-version: [14.x, 16.x, 18.x]
-        node-version: [10.x, 12.x]
+        node-version: [14.x, 16.x]
+        #node-version: [10.x, 12.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/download-artifacts@master
+    - uses: actions/download-artifact@master
       with:
         name: webpack artifacts
         path: public
